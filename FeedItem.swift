@@ -1,5 +1,12 @@
-import Foundation
+//
+//  FeedItem.swift
+//  EssentialFeed
+//
+//  Created by Mario Rotz on 27.05.23.
+//
 
+import Foundation
+ 
 struct FeedItem {
     let id : UUID
     let description : String?
