@@ -1,3 +1,4 @@
+ 
 //
 //  EssentialFeedAPIEndToEndTests.swift
 //  EssentialFeedAPIEndToEndTests
@@ -41,7 +42,7 @@ final class EssentialFeedAPIEndToEndTests: XCTestCase {
             receivedResult = result
             exp.fulfill()
         }
-        wait(for: [exp], timeout: 5.0)
+        wait(for: [exp], timeout: 15.0)
        return receivedResult
     }
     
