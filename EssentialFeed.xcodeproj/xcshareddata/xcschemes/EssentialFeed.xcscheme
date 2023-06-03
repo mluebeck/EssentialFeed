@@ -32,6 +32,9 @@
             reference = "container:EssentialFeed.xctestplan"
             default = "YES">
          </TestPlanReference>
+         <TestPlanReference
+            reference = "container:EssentialFeedAPIEndToEndTests">
+         </TestPlanReference>
       </TestPlans>
       <Testables>
          <TestableReference
