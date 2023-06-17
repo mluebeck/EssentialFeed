@@ -99,7 +99,6 @@
 		8C23E6532A2632C9008EA6A7 /* Feed API */ = {
 			isa = PBXGroup;
 			children = (
-				8C3C4A372A2A3B190019F02F /* helpers */,
 				8CE5441C2A22A09C00C15076 /* LoadFeedFromRemoteUseCaseTests.swift */,
 				8C23E6542A28A6D2008EA6A7 /* URLSessionHTTClientTests.swift */,
 			);
@@ -114,12 +113,12 @@
 			path = EssentialFeedAPIEndToEndTests;
 			sourceTree = "<group>";
 		};
-		8C3C4A372A2A3B190019F02F /* helpers */ = {
+		8C3C4A372A2A3B190019F02F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				8C3C4A382A2A3B430019F02F /* XCTestCase+MemoryLeakTracking.swift */,
 			);
-			path = helpers;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		8CAE3EE72A3DF72B00F3880D /* Feed Cache */ = {
@@ -167,6 +166,7 @@
 		8CE544092A229CCC00C15076 /* EssentialFeedTests */ = {
 			isa = PBXGroup;
 			children = (
+				8C3C4A372A2A3B190019F02F /* Helpers */,
 				8CAE3EE72A3DF72B00F3880D /* Feed Cache */,
 				8C23E6532A2632C9008EA6A7 /* Feed API */,
 				8CE5440A2A229CCC00C15076 /* EssentialFeedTests.swift */,
