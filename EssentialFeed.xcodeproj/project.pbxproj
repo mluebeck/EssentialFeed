@@ -12,7 +12,6 @@
 		8C23E6552A28A6D2008EA6A7 /* URLSessionHTTClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C23E6542A28A6D2008EA6A7 /* URLSessionHTTClientTests.swift */; };
 		8C363A0A2A3BB16400A26680 /* EssentialFeedAPIEndToEntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6F2C1E2A2BF30200ED8344 /* EssentialFeedAPIEndToEntTests.swift */; };
 		8C363A0B2A3BB16700A26680 /* EssentialFeedAPIEndToEntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6F2C1E2A2BF30200ED8344 /* EssentialFeedAPIEndToEntTests.swift */; };
-		8C363A0E2A3BB73C00A26680 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8C363A0D2A3BB73C00A26680 /* README.md */; };
 		8C363A112A3BB76D00A26680 /* feed_architecture.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C363A0F2A3BB76D00A26680 /* feed_architecture.png */; };
 		8C363A122A3BB76D00A26680 /* feed_flowchart.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C363A102A3BB76D00A26680 /* feed_flowchart.png */; };
 		8C3C4A392A2A3B430019F02F /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3C4A382A2A3B430019F02F /* XCTestCase+MemoryLeakTracking.swift */; };
@@ -49,7 +48,6 @@
 		8C23E64F2A2627DF008EA6A7 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		8C23E6512A262844008EA6A7 /* FeedItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemsMapper.swift; sourceTree = "<group>"; };
 		8C23E6542A28A6D2008EA6A7 /* URLSessionHTTClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTClientTests.swift; sourceTree = "<group>"; };
-		8C363A0D2A3BB73C00A26680 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../Downloads/README.md; sourceTree = "<group>"; };
 		8C363A0F2A3BB76D00A26680 /* feed_architecture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feed_architecture.png; sourceTree = "<group>"; };
 		8C363A102A3BB76D00A26680 /* feed_flowchart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feed_flowchart.png; sourceTree = "<group>"; };
 		8C3C4A382A2A3B430019F02F /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
@@ -58,6 +56,7 @@
 		8C6F2C102A2BE54400ED8344 /* EssentialFeedAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C6F2C1E2A2BF30200ED8344 /* EssentialFeedAPIEndToEntTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EssentialFeedAPIEndToEntTests.swift; path = EssentialFeedTests/EssentialFeedAPIEndToEndTests/EssentialFeedAPIEndToEntTests.swift; sourceTree = SOURCE_ROOT; };
 		8C6F2C202A2BF38700ED8344 /* CI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI.xctestplan; sourceTree = SOURCE_ROOT; };
+		8CAE3EE52A3DF4DA00F3880D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8CE543FD2A229CCC00C15076 /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE544002A229CCC00C15076 /* EssentialFeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentialFeed.h; sourceTree = "<group>"; };
 		8CE544052A229CCC00C15076 /* EssentialFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,7 +125,7 @@
 			children = (
 				8C363A0F2A3BB76D00A26680 /* feed_architecture.png */,
 				8C363A102A3BB76D00A26680 /* feed_flowchart.png */,
-				8C363A0D2A3BB73C00A26680 /* README.md */,
+				8CAE3EE52A3DF4DA00F3880D /* README.md */,
 				8C6F2C202A2BF38700ED8344 /* CI.xctestplan */,
 				8C6F2C0B2A2BE3A400ED8344 /* EssentialFeed.xctestplan */,
 				8CE5441B2A229E5F00C15076 /* Feed Feature */,
@@ -308,7 +307,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C363A112A3BB76D00A26680 /* feed_architecture.png in Resources */,
-				8C363A0E2A3BB73C00A26680 /* README.md in Resources */,
 				8C363A122A3BB76D00A26680 /* feed_flowchart.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
