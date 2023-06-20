@@ -107,6 +107,16 @@ final class LoadFeedFromCacheUseCaseTests: XCTestCase {
         XCTAssertEqual(store.receivedMessages, [.retrieve,.deleteCachedFeed])
     }
     
+    func test_load_deleteCacheOnMoreThanSevenDaysOldCache() {
+        let feed = uniqueImageFeed()
+        let fixedCurrentDate = Date()
+        let moreThansevenDaysOldTime = fixedCurrentDate.adding(days: -7).adding(seconds: -1)
+        let (sut,store) = makeSUT(currentDate: { fixedCurrentDate })
+        sut.load { _ in }
+        store.completeRetrieval(with:feed.local, timestamp: moreThansevenDaysOldTime )
+        XCTAssertEqual(store.receivedMessages, [.retrieve,.deleteCachedFeed])
+    }
+    
     //MARK: Helper Methods
     
     private func anyURL() -> URL {
