@@ -90,17 +90,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
     
     //MARK: - Helpers
     
-    private func uniqueImage() -> FeedImage {
-        return FeedImage(id: UUID(), description: "any", location: "any", url: anyURL())
-    }
-    
-    private func uniqueImageFeed() -> (models:[FeedImage], local: [LocalFeedImage]) {
-            let models = [uniqueImage(),uniqueImage()]
-        let local = models.map {
-            LocalFeedImage(id: $0.id, description: $0.description, location: $0.location, url: $0.url)
-        }
-        return (models,local)
-    }
+     
     
     private func expect(_ sut : LocalFeedLoader, toCompleteWithError expectedError: NSError?, when action: () -> Void, file:StaticString = #file, line: UInt = #line) {
         let exp = expectation(description: "Wait for save completion")
@@ -114,14 +104,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
         XCTAssertEqual(receivedError as NSError?, expectedError)
     }
     
-    private func anyURL() -> URL {
-        return URL(string:"http://any-url.com")!
-    }
     
-    private func anyNSError() -> NSError {
-        let anyError = NSError(domain:"any error",code:0)
-        return anyError
-    }
     
     private func makeSUT(currentDate: @escaping ()->Date = Date.init, file:StaticString = #file, line: UInt = #line) -> (sut: LocalFeedLoader, store: FeedStoreSpy) {
         let store = FeedStoreSpy()
