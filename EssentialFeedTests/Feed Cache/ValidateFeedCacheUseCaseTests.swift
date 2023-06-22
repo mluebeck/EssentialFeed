@@ -29,32 +29,32 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
         XCTAssertEqual(store.receivedMessages, [.retrieve])
     }
     
-    func test_validateCache_doesNotDeleteLessThanSevenDaysOldCache() {
+    func test_validateCache_doesNotDeleteNonExpiredCache() {
         let feed = uniqueImageFeed()
         let fixedCurrentDate = Date()
-        let lessThanSevenDaysOldTime = fixedCurrentDate.adding(days: -7).adding(seconds: 1)
+        let nonExpiredTime = fixedCurrentDate.minusFeedCacheMaxAge().adding(seconds: 1)
         let (sut,store) = makeSUT(currentDate: { fixedCurrentDate })
         sut.validateCache()
-        store.completeRetrieval(with:feed.local, timestamp: lessThanSevenDaysOldTime )
+        store.completeRetrieval(with:feed.local, timestamp: nonExpiredTime )
         XCTAssertEqual(store.receivedMessages, [.retrieve])
     }
     
     
     
-    func test_validateCache_deleteSevenDaysOldCache() {
+    func test_validateCache_deleteExpiredCache() {
         let feed = uniqueImageFeed()
         let fixedCurrentDate = Date()
-        let sevenDaysOldTime = fixedCurrentDate.adding(days: -7)
+        let sevenDaysOldTime = fixedCurrentDate.minusFeedCacheMaxAge()
         let (sut,store) = makeSUT(currentDate: { fixedCurrentDate })
         sut.validateCache()
         store.completeRetrieval(with:feed.local, timestamp: sevenDaysOldTime )
         XCTAssertEqual(store.receivedMessages, [.retrieve,.deleteCachedFeed])
     }
     
-    func test_validateCache_deletesMoreThanSevenDaysOldCache() {
+    func test_validateCache_deletesOnCacheExpirationCache() {
         let feed = uniqueImageFeed()
         let fixedCurrentDate = Date()
-        let moreThansevenDaysOldTime = fixedCurrentDate.adding(days: -7).adding(seconds: -1)
+        let moreThansevenDaysOldTime = fixedCurrentDate.minusFeedCacheMaxAge().adding(seconds: -1)
         let (sut,store) = makeSUT(currentDate: { fixedCurrentDate })
         sut.validateCache()
         store.completeRetrieval(with:feed.local, timestamp: moreThansevenDaysOldTime )
