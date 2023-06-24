@@ -50,7 +50,7 @@ class CodableFeedStore {
     }
     
     func insert(_ feed: [LocalFeedImage],timestamp:Date,completion: @escaping FeedStore.InsertionCompletion)
-    {    
+    {
         let encoder = JSONEncoder()
         let cache = Cache(feed: feed.map(CodableFeedImage.init), timestamp: timestamp)
         let encoded = try! encoder.encode(cache)
@@ -62,17 +62,14 @@ class CodableFeedStore {
 
 class CodableFeedStoreTests: XCTestCase {
     
-    
-    
     override func setUp() {
         super.setUp()
         let storeURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("image-feed.store")
         try? FileManager.default.removeItem(at: storeURL)
     }
     
-    
     func test_retrieve_delivestEmptyOnEmptyCache() {
-        let sut = CodableFeedStore()
+        let sut = makeSUT()
         let exp = expectation(description: "Wait for cache retrieval")
         
         sut.retrieve { result in
@@ -88,7 +85,7 @@ class CodableFeedStoreTests: XCTestCase {
     }
     
     func test_retrieve_hasNoSideEffectsOnEmptyCache() {
-        let sut = CodableFeedStore()
+        let sut = makeSUT()
         let exp = expectation(description: "Wait for cache retrieval")
         
         sut.retrieve { firstResult in
@@ -106,7 +103,7 @@ class CodableFeedStoreTests: XCTestCase {
     }
     
     func test_retrieveAfterInsertingToEmptyCache_deliversInsertedValues() {
-        let sut = CodableFeedStore()
+        let sut = makeSUT()
         let exp = expectation(description: "Wait for cache retrieval")
         let feed = uniqueImageFeed().local
         let timestamp = Date()
@@ -127,4 +124,9 @@ class CodableFeedStoreTests: XCTestCase {
         wait(for: [exp],timeout: 1.0)
     }
     
+    //MAKR: Helpers
+    
+    private func makeSUT()->CodableFeedStore {
+        return CodableFeedStore()
+    }
 }
