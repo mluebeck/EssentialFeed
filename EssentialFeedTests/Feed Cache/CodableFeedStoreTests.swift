@@ -94,8 +94,9 @@ class CodableFeedStoreTests: XCTestCase {
     }
     
     func test_retrieve_deliversFailureOnRetrievalError() {
-        let sut = makeSUT()
-        try! "invalid data".write(to:testSpecificStoreURL(),atomically: false,encoding: .utf8)
+        let storeURL = testSpecificStoreURL()
+        let sut = makeSUT(storeURL: storeURL)
+        try! "invalid data".write(to:storeURL,atomically: false,encoding: .utf8)
         expect(sut, toRetrieve: .failure(anyNSError()))
     }
     
@@ -120,9 +121,8 @@ class CodableFeedStoreTests: XCTestCase {
     
     //MAKR: Helpers
     
-    private func makeSUT(file:StaticString = #file, line : UInt = #line)->CodableFeedStore {
-        let storeURL = testSpecificStoreURL()
-        let sut = CodableFeedStore(storeURL: storeURL)
+    private func makeSUT(storeURL:URL? = nil, file:StaticString = #file, line : UInt = #line)->CodableFeedStore {
+        let sut = CodableFeedStore(storeURL: storeURL ?? testSpecificStoreURL())
         trackForMemoryLeaks(sut,file:file,line:line)
         return sut
     }
@@ -162,7 +162,7 @@ class CodableFeedStoreTests: XCTestCase {
         let exp = expectation(description: "Wait for cache retrieval")
         sut.retrieve { retrievedResult in
             switch (expectedResult,retrievedResult) {
-            case (.empty,.empty), (.failure,.failureç):
+            case (.empty,.empty), (.failure,.failure):
                 break
             case let (.found(expected), .found(retrieved)):
                 XCTAssertEqual(retrieved.feed, expected.feed, file:file,line:line)
