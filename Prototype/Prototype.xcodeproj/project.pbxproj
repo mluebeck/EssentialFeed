@@ -61,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				8C7FD6122A609D7200F1F1BB /* AppDelegate.swift */,
+				8C2D766A2A617F190040C50D /* FeedImageCell.swift */,
 				8C2D76682A6179810040C50D /* FeedImageViewModel+PrototypeData.swift */,
 				8C2D76662A6175590040C50D /* FeedViewController.swift */,
 				8C7FD6142A609D7200F1F1BB /* SceneDelegate.swift */,
@@ -68,7 +69,6 @@
 				8C7FD61B2A609D7400F1F1BB /* Assets.xcassets */,
 				8C7FD61D2A609D7400F1F1BB /* LaunchScreen.storyboard */,
 				8C7FD6202A609D7400F1F1BB /* Info.plist */,
-				8C2D766A2A617F190040C50D /* FeedImageCell.swift */,
 			);
 			path = Prototype;
 			sourceTree = "<group>";
