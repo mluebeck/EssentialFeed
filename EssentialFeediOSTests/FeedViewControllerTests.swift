@@ -23,16 +23,18 @@ final class FeedViewControllerTests: XCTestCase {
     
     func test_loadingFeedIndicatiorIsVisibleWhileLoadingFeed() {
         let (sut,loader) = makeSUT()
+        
         sut.loadViewIfNeeded()
         XCTAssertEqual(sut.isShowingLoadingIndicator, true,"Expected loading indicator once view is loaded")
-        sut.loadViewIfNeeded()
+       
         loader.completeFeedLoading(at:0)
-        XCTAssertEqual(sut.isShowingLoadingIndicator,false,"Expected no loading indicator once loading is completed")
+        XCTAssertEqual(sut.isShowingLoadingIndicator,false,"Expected no loading indicator once loading completes successfully")
+        
         sut.simulateUserInitiatedFeedReload()
         XCTAssertEqual(sut.isShowingLoadingIndicator, true,"Expected loading indicator once user initiates a reload")
-        sut.simulateUserInitiatedFeedReload()
-        loader.completeFeedLoading(at:1)
-        XCTAssertEqual(sut.isShowingLoadingIndicator, false,"Expected no loading indicator once user initiated loading is completed")
+        
+        loader.completeFeedLoadingWithError(at:1)
+        XCTAssertFalse(sut.isShowingLoadingIndicator,"Expected no loading indicator once user initiated loading completes with error")
     }
     
     func test_loadFeedCompletion_rendersSuccessfullyLoadedFeed(){
