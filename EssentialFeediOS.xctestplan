@@ -22,7 +22,13 @@
     "testTimeoutsEnabled" : true
   },
   "testTargets" : [
-
+    {
+      "target" : {
+        "containerPath" : "container:EssentialFeed.xcodeproj",
+        "identifier" : "8C2D76782A6208010040C50D",
+        "name" : "EssentialFeediOSTests"
+      }
+    }
   ],
   "version" : 1
 }
