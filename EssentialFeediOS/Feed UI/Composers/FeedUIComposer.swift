@@ -27,7 +27,7 @@ private extension FeedViewController {
         let storyboard = UIStoryboard(name:"Feed", bundle:bundle)
         
         let feedController = storyboard.instantiateInitialViewController() as! FeedViewController
-        feedController.delegate = delegate 
+        feedController.delegate = delegate
         feedController.title = FeedPresenter.title
         return feedController
     }
