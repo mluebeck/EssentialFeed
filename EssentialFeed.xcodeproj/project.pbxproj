@@ -51,6 +51,8 @@
 		8CB3E1072A6BDB6B00695890 /* UIRefreshControl+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB3E1062A6BDB6B00695890 /* UIRefreshControl+TestHelpers.swift */; };
 		8CB3E1092A6BDBA400695890 /* UIControl+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB3E1082A6BDBA400695890 /* UIControl+TestHelpers.swift */; };
 		8CB3E10B2A6BDBF500695890 /* FeedViewController+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB3E10A2A6BDBF500695890 /* FeedViewController+TestHelpers.swift */; };
+		8CB3E10D2A6BDC4E00695890 /* FeedImageCell+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB3E10C2A6BDC4E00695890 /* FeedImageCell+TestHelpers.swift */; };
+		8CB3E10F2A6BDC7600695890 /* UIButton+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB3E10E2A6BDC7600695890 /* UIButton+TestHelpers.swift */; };
 		8CBBBDD12A4B620800B3F46E /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBFA4A02A432376004AA9D6 /* SharedTestHelpers.swift */; };
 		8CBBBDD72A4B652600B3F46E /* FeedCacheTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBFA49E2A4320DC004AA9D6 /* FeedCacheTestHelpers.swift */; };
 		8CBFA49F2A4320DC004AA9D6 /* FeedCacheTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBFA49E2A4320DC004AA9D6 /* FeedCacheTestHelpers.swift */; };
@@ -183,6 +185,8 @@
 		8CB3E1062A6BDB6B00695890 /* UIRefreshControl+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+TestHelpers.swift"; sourceTree = "<group>"; };
 		8CB3E1082A6BDBA400695890 /* UIControl+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+TestHelpers.swift"; sourceTree = "<group>"; };
 		8CB3E10A2A6BDBF500695890 /* FeedViewController+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewController+TestHelpers.swift"; sourceTree = "<group>"; };
+		8CB3E10C2A6BDC4E00695890 /* FeedImageCell+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedImageCell+TestHelpers.swift"; sourceTree = "<group>"; };
+		8CB3E10E2A6BDC7600695890 /* UIButton+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+TestHelpers.swift"; sourceTree = "<group>"; };
 		8CBFA49E2A4320DC004AA9D6 /* FeedCacheTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCacheTestHelpers.swift; sourceTree = "<group>"; };
 		8CBFA4A02A432376004AA9D6 /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		8CC198F12A49C31B00D6ED13 /* XCTestCase+FeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedStoreSpecs.swift"; sourceTree = "<group>"; };
@@ -418,9 +422,11 @@
 			isa = PBXGroup;
 			children = (
 				8CB3E1042A6BDB1F00695890 /* UIImage+TestHelpers.swift */,
+				8CB3E10E2A6BDC7600695890 /* UIButton+TestHelpers.swift */,
 				8CB3E1062A6BDB6B00695890 /* UIRefreshControl+TestHelpers.swift */,
 				8CB3E1082A6BDBA400695890 /* UIControl+TestHelpers.swift */,
 				8CB3E10A2A6BDBF500695890 /* FeedViewController+TestHelpers.swift */,
+				8CB3E10C2A6BDC4E00695890 /* FeedImageCell+TestHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -831,8 +837,10 @@
 				8CD2AA0E2A63741A00007EA2 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				8CB3E1092A6BDBA400695890 /* UIControl+TestHelpers.swift in Sources */,
 				8CB3E10B2A6BDBF500695890 /* FeedViewController+TestHelpers.swift in Sources */,
+				8CB3E10F2A6BDC7600695890 /* UIButton+TestHelpers.swift in Sources */,
 				8CB3E1012A6BD5A800695890 /* FeedLocalizationTests.swift in Sources */,
 				8CB3E1052A6BDB1F00695890 /* UIImage+TestHelpers.swift in Sources */,
+				8CB3E10D2A6BDC4E00695890 /* FeedImageCell+TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
