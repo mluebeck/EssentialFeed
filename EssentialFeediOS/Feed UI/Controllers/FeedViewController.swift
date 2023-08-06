@@ -6,13 +6,16 @@
 //
 
 import UIKit
- 
+import EssentialFeed
+
 protocol FeedViewControllerDelegate {
     func didRequestFeedRequest()
 }
 
-final public class FeedViewController : UITableViewController, UITableViewDataSourcePrefetching, FeedLoadingView {
+final public class FeedViewController : UITableViewController, UITableViewDataSourcePrefetching, FeedLoadingView, FeedErrorView {
       
+    @IBOutlet private(set) public var errorView: ErrorView?
+
     var delegate : FeedViewControllerDelegate?
     
     var tableModel = [FeedImageCellController]() {
@@ -21,12 +24,16 @@ final public class FeedViewController : UITableViewController, UITableViewDataSo
         }
     }
     
-    func display(_ viewModel: FeedLoadingViewModel) {
+    public func display(_ viewModel: FeedLoadingViewModel) {
         if viewModel.isLoading {
             refreshControl?.beginRefreshing()
         } else {
             refreshControl?.endRefreshing()
         }
+    }
+    
+    public func display(_ viewModel: FeedErrorViewModel) {
+        errorView?.message = viewModel.message
     }
     
     @IBAction private func refresh() {
