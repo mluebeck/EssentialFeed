@@ -1,11 +1,7 @@
 //
-//  FeedViewModel.swift
-//  EssentialFeed
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
-//  Created by Mario Rotz on 07.08.23.
-//
-
 
 public struct FeedViewModel {
-    public let feed: [FeedImage]
+	public let feed: [FeedImage]
 }

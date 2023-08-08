@@ -1,10 +1,7 @@
 //
-//  FeedLoadingViewModel.swift
-//  EssentialFeed
-//
-//  Created by Mario Rotz on 07.08.23.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 public struct FeedLoadingViewModel {
-    public let isLoading : Bool
+	public let isLoading: Bool
 }
