@@ -29,7 +29,7 @@ final class EssentialAppUIAcceptanceTests: XCTestCase {
         let onlineApp = XCUIApplication()
         onlineApp.launchArguments = ["-reset"]
         onlineApp.launch()
-        
+         
         let offlineApp = XCUIApplication()
         offlineApp.launchArguments = ["-connectivity", "offline"]
         offlineApp.launch()
