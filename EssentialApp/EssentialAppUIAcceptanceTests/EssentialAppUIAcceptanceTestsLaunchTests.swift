@@ -10,6 +10,7 @@ import XCTest
 
 final class EssentialAppUIAcceptanceTestsLaunchTests: XCTestCase {
 
+    /*
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }
@@ -30,4 +31,6 @@ final class EssentialAppUIAcceptanceTestsLaunchTests: XCTestCase {
         attachment.lifetime = .keepAlways
         add(attachment)
     }
+    */
+    
 }

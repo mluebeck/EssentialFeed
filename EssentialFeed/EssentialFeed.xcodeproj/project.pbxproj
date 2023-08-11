@@ -758,7 +758,7 @@
 		080EDEE821B6DA7E00813479 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Essential Developer";
 				TargetAttributes = {
