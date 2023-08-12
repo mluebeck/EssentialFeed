@@ -11,10 +11,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	var window: UIWindow?
     let localStoreURL = NSPersistentContainer.defaultDirectoryURL().appendingPathComponent("feed-store.sqlite")
    
-	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-		guard let _ = (scene as? UIWindowScene) else { return }
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        guard let _ = (scene as? UIWindowScene) else { return }
         
-        
+        configureWindow()
+    }
+    
+    func configureWindow() {
         let remoteURL = URL(string: "https://ile-api.essentialdeveloper.com/essential-feed/v1/feed")!
         let remoteClient = makeRemoteClient()
         
@@ -34,7 +37,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let imageLoader = FeedImageDataLoaderWithFallbackComposite(primary: feedImageLoaderCacheDecorator, fallback: remoteImageLoader)
         
-        window?.rootViewController = FeedUIComposer.feedComposedWith(feedLoader:feedLoader, imageLoader:imageLoader )
+        let viewController = FeedUIComposer.feedComposedWith(feedLoader:feedLoader, imageLoader:imageLoader )
+ 
+        window?.rootViewController = UINavigationController(rootViewController: viewController)
+        
         
 	}
     
@@ -43,4 +49,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 }
 
+class AlwaysFailingHTTPClient: HTTPClient {
+    private class Task: HTTPClientTask {
+        func cancel() {
+        }
+    }
+    
+    func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
+        completion(.failure(NSError(domain: "offline", code: 0)))
+        return Task()
+    }
+}
  
