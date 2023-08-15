@@ -42,6 +42,7 @@
 		8CC895F92A84590600FC8B28 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC895F82A84590600FC8B28 /* XCTestCase+MemoryLeakTracking.swift */; };
 		8CC895FF2A84E6DF00FC8B28 /* FeedLoaderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC895FE2A84E6DF00FC8B28 /* FeedLoaderStub.swift */; };
 		8CC896012A84E85900FC8B28 /* XCTestCase+FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC896002A84E85900FC8B28 /* XCTestCase+FeedLoader.swift */; };
+		8CFEDF1C2A8C198B00A95F02 /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFEDF1B2A8C198B00A95F02 /* CombineHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		8CC895F82A84590600FC8B28 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		8CC895FE2A84E6DF00FC8B28 /* FeedLoaderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderStub.swift; sourceTree = "<group>"; };
 		8CC896002A84E85900FC8B28 /* XCTestCase+FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedLoader.swift"; sourceTree = "<group>"; };
+		8CFEDF1B2A8C198B00A95F02 /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 		0895DA85234B3B950031BB2D /* EssentialApp */ = {
 			isa = PBXGroup;
 			children = (
+				8CFEDF1B2A8C198B00A95F02 /* CombineHelpers.swift */,
 				8CC5FDBB2A88149E004D9F9D /* FeedUIComposer.swift */,
 				8CC5FDBA2A88149E004D9F9D /* WeakRefVirtualProxy.swift */,
 				8CC5FDB82A88149E004D9F9D /* FeedImageDataLoaderPresentationAdapter.swift */,
@@ -315,6 +318,7 @@
 			files = (
 				8CC5FDBD2A88149E004D9F9D /* FeedUIComposer.swift in Sources */,
 				8CC5FDBE2A88149E004D9F9D /* FeedImageDataLoaderPresentationAdapter.swift in Sources */,
+				8CFEDF1C2A8C198B00A95F02 /* CombineHelpers.swift in Sources */,
 				0895DA87234B3B950031BB2D /* AppDelegate.swift in Sources */,
 				8CC895F22A8451AC00FC8B28 /* FeedLoaderWithFallbackComposite.swift in Sources */,
 				8CC5FDBF2A88149E004D9F9D /* FeedViewAdapter.swift in Sources */,
