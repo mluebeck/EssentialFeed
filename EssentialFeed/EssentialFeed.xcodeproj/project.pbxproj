@@ -97,6 +97,7 @@
 		8CC9E6802A9F6F6800B2955C /* ImageCommentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9E67F2A9F6F6800B2955C /* ImageCommentsPresenter.swift */; };
 		8CC9E6822A9F6FA600B2955C /* ImageCommentsLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9E6812A9F6FA600B2955C /* ImageCommentsLocalizationTests.swift */; };
 		8CC9E6842A9F6FD300B2955C /* ImageCommentsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9E6832A9F6FD300B2955C /* ImageCommentsPresenterTests.swift */; };
+		8CC9E6862A9F71C500B2955C /* ImageCommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9E6852A9F71C500B2955C /* ImageCommentsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -226,6 +227,7 @@
 		8CC9E67F2A9F6F6800B2955C /* ImageCommentsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsPresenter.swift; sourceTree = "<group>"; };
 		8CC9E6812A9F6FA600B2955C /* ImageCommentsLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsLocalizationTests.swift; sourceTree = "<group>"; };
 		8CC9E6832A9F6FD300B2955C /* ImageCommentsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsPresenterTests.swift; sourceTree = "<group>"; };
+		8CC9E6852A9F71C500B2955C /* ImageCommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -645,6 +647,7 @@
 				8CC9E67B2A9F6E2600B2955C /* ImageComments.strings */,
 				8CC9E67D2A9F6F4C00B2955C /* ImageCommentsModel.swift */,
 				8CC9E67F2A9F6F6800B2955C /* ImageCommentsPresenter.swift */,
+				8CC9E6852A9F71C500B2955C /* ImageCommentsViewModel.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -892,6 +895,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CC9E6862A9F71C500B2955C /* ImageCommentsViewModel.swift in Sources */,
 				08C4E986233E139400D939F8 /* LocalFeedImageDataLoader.swift in Sources */,
 				08285AFB228C17B8000A8987 /* CoreDataHelpers.swift in Sources */,
 				8CC9E6712A9F427700B2955C /* ImageCommentsMapper.swift in Sources */,
@@ -1103,7 +1107,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1163,7 +1167,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
