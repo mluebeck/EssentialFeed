@@ -30,6 +30,15 @@ class ImageCommentsMapperTests: XCTestCase {
         }
     }
 
+    func test_map_deliversNoItemsOn200HTTPResponseWithEmptyJSONList() throws {
+        let emptyListJSON = makeItemsJSON([])
+
+        let result = try ImageCommentsMapper.map(emptyListJSON, from: HTTPURLResponse(statusCode: 200))
+
+        XCTAssertEqual(result, [])
+    }
+
+    y
 
     // MARK: - Helpers
     
