@@ -21,7 +21,15 @@ class ImageCommentsMapperTests: XCTestCase {
         }
     }
 
-    
+    func test_map_throwsErrorOn2xxHTTPResponseWithInvalidJSON() throws {
+        let invalidJSON = Data("invalid json".utf8)
+        try (200 ... 299).forEach {
+            XCTAssertThrowsError(
+                try ImageCommentsMapper.map(invalidJSON, from: HTTPURLResponse(statusCode: $0))
+            )
+        }
+    }
+
 
     // MARK: - Helpers
     
