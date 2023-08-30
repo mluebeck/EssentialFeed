@@ -38,7 +38,7 @@ class ImageCommentsMapperTests: XCTestCase {
         XCTAssertEqual(result, [])
     }
 
-    y
+ 
 
     // MARK: - Helpers
     
