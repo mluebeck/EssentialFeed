@@ -91,6 +91,7 @@
 		8CC5FDE22A8973B6004D9F9D /* UITableView+HeaderSizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC5FDE12A8973B5004D9F9D /* UITableView+HeaderSizing.swift */; };
 		8CC9E6712A9F427700B2955C /* ImageCommentsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9E6702A9F427700B2955C /* ImageCommentsMapper.swift */; };
 		8CC9E6752A9F42A500B2955C /* ImageCommentsMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9E6742A9F42A500B2955C /* ImageCommentsMapperTests.swift */; };
+		8CC9E6782A9F673D00B2955C /* ImageComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9E6772A9F673D00B2955C /* ImageComment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,6 +215,7 @@
 		8CC5FDE12A8973B5004D9F9D /* UITableView+HeaderSizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+HeaderSizing.swift"; sourceTree = "<group>"; };
 		8CC9E6702A9F427700B2955C /* ImageCommentsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsMapper.swift; sourceTree = "<group>"; };
 		8CC9E6742A9F42A500B2955C /* ImageCommentsMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsMapperTests.swift; sourceTree = "<group>"; };
+		8CC9E6772A9F673D00B2955C /* ImageComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageComment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -578,6 +580,7 @@
 		8CC9E66E2A9F425400B2955C /* ImageComments */ = {
 			isa = PBXGroup;
 			children = (
+				8CC9E6762A9F672C00B2955C /* Domain */,
 				8CC9E66F2A9F426100B2955C /* API */,
 			);
 			path = ImageComments;
@@ -605,6 +608,14 @@
 				8CC9E6742A9F42A500B2955C /* ImageCommentsMapperTests.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		8CC9E6762A9F672C00B2955C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				8CC9E6772A9F673D00B2955C /* ImageComment.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -866,6 +877,7 @@
 				087148B9232BEBD800D6BE1A /* FeedViewModel.swift in Sources */,
 				089C40DE22170F2300DE552E /* FeedStore.swift in Sources */,
 				089C40DC22170EC500DE552E /* LocalFeedLoader.swift in Sources */,
+				8CC9E6782A9F673D00B2955C /* ImageComment.swift in Sources */,
 				08C0880C21E4EED600ACFB30 /* HTTPClient.swift in Sources */,
 				080EDF0C21B6DAE800813479 /* FeedImage.swift in Sources */,
 				08C4E988233E13CC00D939F8 /* FeedImageDataStore.swift in Sources */,
