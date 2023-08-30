@@ -11,4 +11,5 @@ import EssentialFeed
 
 final class ImageCommentsLocalizationTests: XCTestCase {
     func test_localizedStrings_haveKeysAndValuesForAllSupportedLocalizations() {}
+    
 }

@@ -10,7 +10,9 @@ import XCTest
 import EssentialFeed
 
 class ImageCommentsPresenterTests: XCTestCase {
-    func test_title_isLocalized() {}
+    func test_title_isLocalized() {
+        XCTAssertEqual(ImageCommentsPresenter.title, localized("IMAGECOMMENTS_VIEW_TITLE"))
+    }
 
     func test_map_createsViewModel() {}
 
