@@ -301,6 +301,7 @@
 		080EDEF321B6DA7E00813479 /* EssentialFeed */ = {
 			isa = PBXGroup;
 			children = (
+				8CC9E6AD2AA2814400B2955C /* Image Comments API */,
 				8CC9E6A82AA27F8700B2955C /* Shared API Infra */,
 				8CC9E6A72AA27F5800B2955C /* Shared API */,
 				8CC9E6A42AA27B6500B2955C /* Image Comments Feature */,
@@ -316,6 +317,7 @@
 		080EDEFE21B6DA7E00813479 /* EssentialFeedTests */ = {
 			isa = PBXGroup;
 			children = (
+				8CC9E6AE2AA2816900B2955C /* Image Comments API */,
 				8CC9E6AB2AA2800E00B2955C /* Shared API */,
 				8CC9E6A92AA27FE300B2955C /* Shared API Infra */,
 				080EDF0121B6DA7E00813479 /* Info.plist */,
@@ -499,8 +501,6 @@
 				08C0880D21E4EF2900ACFB30 /* FeedItemsMapper.swift */,
 				08868937221DAA01007BC3E7 /* RemoteFeedItem.swift */,
 				08897BEC23393A2E0029F5E4 /* RemoteFeedImageDataLoader.swift */,
-				8CC9E6A02AA2765B00B2955C /* RemoteImageCommentsLoader.swift */,
-				8CC9E6A22AA2768800B2955C /* ImageCommentsMapper.swift */,
 			);
 			path = "Feed API";
 			sourceTree = "<group>";
@@ -518,7 +518,6 @@
 				08897BE9233939AA0029F5E4 /* Helpers */,
 				08DDC13921BEA99E00F490ED /* LoadFeedFromRemoteUseCaseTests.swift */,
 				08897BE7233910040029F5E4 /* LoadFeedImageDataFromRemoteUseCaseTests.swift */,
-				8CC9E69E2AA2762200B2955C /* LoadImageCommentsFromRemoteUseCaseTests.swift */,
 			);
 			path = "Feed API";
 			sourceTree = "<group>";
@@ -635,6 +634,23 @@
 				08897BEA233939B60029F5E4 /* HTTPClientSpy.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8CC9E6AD2AA2814400B2955C /* Image Comments API */ = {
+			isa = PBXGroup;
+			children = (
+				8CC9E6A02AA2765B00B2955C /* RemoteImageCommentsLoader.swift */,
+				8CC9E6A22AA2768800B2955C /* ImageCommentsMapper.swift */,
+			);
+			path = "Image Comments API";
+			sourceTree = "<group>";
+		};
+		8CC9E6AE2AA2816900B2955C /* Image Comments API */ = {
+			isa = PBXGroup;
+			children = (
+				8CC9E69E2AA2762200B2955C /* LoadImageCommentsFromRemoteUseCaseTests.swift */,
+			);
+			path = "Image Comments API";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
