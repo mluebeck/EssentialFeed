@@ -89,4 +89,3 @@ class AlwaysFailingHTTPClient: HTTPClient {
         return Task()
     }
 }
-extension RemoteLoader: FeedLoader where Resource == [FeedImage] {}
