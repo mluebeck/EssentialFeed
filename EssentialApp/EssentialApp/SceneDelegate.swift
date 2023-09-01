@@ -59,7 +59,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     
-    private func makeRemoteFeedLoaderWithLocalFallback() -> RemoteFeedLoader.Publisher {
+    private func makeRemoteFeedLoaderWithLocalFallback() -> FeedLoader.Publisher {
         return remoteFeedLoader.loadPublisher().caching(to: localFeedLoader).fallback(to: localFeedLoader.loadPublisher)
     }
     
