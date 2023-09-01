@@ -102,6 +102,7 @@
 		8CC9E6902AA258A400B2955C /* ImageCommentsSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9E68F2AA258A400B2955C /* ImageCommentsSnapshotTests.swift */; };
 		8CC9E6952AA2591100B2955C /* ImageComments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC9E6942AA2591100B2955C /* ImageComments.storyboard */; };
 		8CC9E6972AA2592C00B2955C /* ImageCommentCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9E6962AA2592C00B2955C /* ImageCommentCellController.swift */; };
+		8CC9E6992AA25A0E00B2955C /* ImageCommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9E6982AA25A0E00B2955C /* ImageCommentsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -238,6 +239,7 @@
 		8CC9E68F2AA258A400B2955C /* ImageCommentsSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsSnapshotTests.swift; sourceTree = "<group>"; };
 		8CC9E6942AA2591100B2955C /* ImageComments.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageComments.storyboard; sourceTree = "<group>"; };
 		8CC9E6962AA2592C00B2955C /* ImageCommentCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentCellController.swift; sourceTree = "<group>"; };
+		8CC9E6982AA25A0E00B2955C /* ImageCommentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -694,6 +696,7 @@
 			isa = PBXGroup;
 			children = (
 				8CC9E6942AA2591100B2955C /* ImageComments.storyboard */,
+				8CC9E6982AA25A0E00B2955C /* ImageCommentsCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1046,6 +1049,7 @@
 				08A3F2BB232BA64700127C15 /* UIRefreshControl+Helpers.swift in Sources */,
 				08B5EB5022CE328100FE8683 /* UIView+Shimmering.swift in Sources */,
 				0822D0F523058078004B3345 /* UITableView+Dequeueing.swift in Sources */,
+				8CC9E6992AA25A0E00B2955C /* ImageCommentsCell.swift in Sources */,
 				08BB7EAB22C1425100F8B83C /* FeedViewController.swift in Sources */,
 				0822D0F7230581D2004B3345 /* UIImageView+Animations.swift in Sources */,
 				08B5EB4E22CE244400FE8683 /* FeedImageCell.swift in Sources */,
