@@ -92,6 +92,7 @@
 		8CC9E6C42AA3943E00B2955C /* Shared.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CC9E6C62AA3943E00B2955C /* Shared.strings */; };
 		8CC9E6CA2AA3947100B2955C /* SharedLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9E6C92AA3947100B2955C /* SharedLocalizationTests.swift */; };
 		8CC9E6CB2AA3984400B2955C /* Shared.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CC9E6C62AA3943E00B2955C /* Shared.strings */; };
+		8CC9E6CD2AA3992300B2955C /* SharedLocalizationTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9E6CC2AA3992300B2955C /* SharedLocalizationTestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -217,6 +218,7 @@
 		8CC9E6C72AA3944200B2955C /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Shared.strings; sourceTree = "<group>"; };
 		8CC9E6C82AA3944400B2955C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Shared.strings"; sourceTree = "<group>"; };
 		8CC9E6C92AA3947100B2955C /* SharedLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalizationTests.swift; sourceTree = "<group>"; };
+		8CC9E6CC2AA3992300B2955C /* SharedLocalizationTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalizationTestHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,6 +379,7 @@
 			children = (
 				0844768E21FCB24E00439BE9 /* XCTestCase+MemoryLeakTracking.swift */,
 				081C0DB222491EEF00AC754E /* SharedTestHelpers.swift */,
+				8CC9E6CC2AA3992300B2955C /* SharedLocalizationTestHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -961,6 +964,7 @@
 				082DB86421F763F900A71F69 /* URLSessionHTTPClientTests.swift in Sources */,
 				08C4E984233E037200D939F8 /* LoadFeedImageDataFromCacheUseCaseTests.swift in Sources */,
 				086BE4842232725E004CDC26 /* FeedStoreSpy.swift in Sources */,
+				8CC9E6CD2AA3992300B2955C /* SharedLocalizationTestHelpers.swift in Sources */,
 				8CC9E6CA2AA3947100B2955C /* SharedLocalizationTests.swift in Sources */,
 				081C0DB322491EEF00AC754E /* SharedTestHelpers.swift in Sources */,
 				089C40D42216C37400DE552E /* CacheFeedUseCaseTests.swift in Sources */,
