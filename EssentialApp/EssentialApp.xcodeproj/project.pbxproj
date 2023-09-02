@@ -19,7 +19,7 @@
 		8C0107172A851FA80008941A /* XCTestCase+FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0107162A851FA80008941A /* XCTestCase+FeedImageDataLoader.swift */; };
 		8C0107192A851FE00008941A /* FeedImageDataLoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0107182A851FE00008941A /* FeedImageDataLoaderSpy.swift */; };
 		8CC5FDB52A87DC05004D9F9D /* SceneDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC5FDB42A87DC05004D9F9D /* SceneDelegateTests.swift */; };
-		8CC5FDBC2A88149E004D9F9D /* FeedLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC5FDB62A88149E004D9F9D /* FeedLoaderPresentationAdapter.swift */; };
+		8CC5FDBC2A88149E004D9F9D /* LoadResourcePresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC5FDB62A88149E004D9F9D /* LoadResourcePresentationAdapter.swift */; };
 		8CC5FDBD2A88149E004D9F9D /* FeedUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC5FDBB2A88149E004D9F9D /* FeedUIComposer.swift */; };
 		8CC5FDBE2A88149E004D9F9D /* FeedImageDataLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC5FDB82A88149E004D9F9D /* FeedImageDataLoaderPresentationAdapter.swift */; };
 		8CC5FDBF2A88149E004D9F9D /* FeedViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC5FDB92A88149E004D9F9D /* FeedViewAdapter.swift */; };
@@ -82,7 +82,7 @@
 		8C0107162A851FA80008941A /* XCTestCase+FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedImageDataLoader.swift"; sourceTree = "<group>"; };
 		8C0107182A851FE00008941A /* FeedImageDataLoaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderSpy.swift; sourceTree = "<group>"; };
 		8CC5FDB42A87DC05004D9F9D /* SceneDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateTests.swift; sourceTree = "<group>"; };
-		8CC5FDB62A88149E004D9F9D /* FeedLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
+		8CC5FDB62A88149E004D9F9D /* LoadResourcePresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadResourcePresentationAdapter.swift; sourceTree = "<group>"; };
 		8CC5FDB82A88149E004D9F9D /* FeedImageDataLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
 		8CC5FDB92A88149E004D9F9D /* FeedViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewAdapter.swift; sourceTree = "<group>"; };
 		8CC5FDBA2A88149E004D9F9D /* WeakRefVirtualProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakRefVirtualProxy.swift; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 				8CC5FDBB2A88149E004D9F9D /* FeedUIComposer.swift */,
 				8CC5FDBA2A88149E004D9F9D /* WeakRefVirtualProxy.swift */,
 				8CC5FDB82A88149E004D9F9D /* FeedImageDataLoaderPresentationAdapter.swift */,
-				8CC5FDB62A88149E004D9F9D /* FeedLoaderPresentationAdapter.swift */,
+				8CC5FDB62A88149E004D9F9D /* LoadResourcePresentationAdapter.swift */,
 				8CC5FDB92A88149E004D9F9D /* FeedViewAdapter.swift */,
 				0895DA86234B3B950031BB2D /* AppDelegate.swift */,
 				0895DA88234B3B950031BB2D /* SceneDelegate.swift */,
@@ -312,7 +312,7 @@
 				8CFEDF1C2A8C198B00A95F02 /* CombineHelpers.swift in Sources */,
 				0895DA87234B3B950031BB2D /* AppDelegate.swift in Sources */,
 				8CC5FDBF2A88149E004D9F9D /* FeedViewAdapter.swift in Sources */,
-				8CC5FDBC2A88149E004D9F9D /* FeedLoaderPresentationAdapter.swift in Sources */,
+				8CC5FDBC2A88149E004D9F9D /* LoadResourcePresentationAdapter.swift in Sources */,
 				8CC5FDC02A88149E004D9F9D /* WeakRefVirtualProxy.swift in Sources */,
 				0895DA89234B3B950031BB2D /* SceneDelegate.swift in Sources */,
 			);
