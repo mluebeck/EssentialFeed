@@ -15,7 +15,7 @@ final class FeedUIIntegrationTests: XCTestCase {
 		
 		sut.loadViewIfNeeded()
 		
-		XCTAssertEqual(sut.title, localized("FEED_VIEW_TITLE"))
+		XCTAssertEqual(sut.title, feedTitle)
 	}
 	
 	func test_loadFeedActions_requestFeedFromLoader() {
@@ -85,11 +85,9 @@ final class FeedUIIntegrationTests: XCTestCase {
 	func test_loadFeedCompletion_doesNotAlterCurrentRenderingStateOnError() {
 		let image0 = makeImage()
 		let (sut, loader) = makeSUT()
-		
 		sut.loadViewIfNeeded()
 		loader.completeFeedLoading(with: [image0], at: 0)
 		assertThat(sut, isRendering: [image0])
-		
 		sut.simulateUserInitiatedFeedReload()
 		loader.completeFeedLoadingWithError(at: 1)
 		assertThat(sut, isRendering: [image0])
@@ -97,13 +95,10 @@ final class FeedUIIntegrationTests: XCTestCase {
 	
 	func test_loadFeedCompletion_rendersErrorMessageOnErrorUntilNextReload() {
 		let (sut, loader) = makeSUT()
-		
 		sut.loadViewIfNeeded()
 		XCTAssertEqual(sut.errorMessage, nil)
-		
 		loader.completeFeedLoadingWithError(at: 0)
-		XCTAssertEqual(sut.errorMessage, localized("FEED_VIEW_CONNECTION_ERROR"))
-		
+        XCTAssertEqual(sut.errorMessage, loadError)
 		sut.simulateUserInitiatedFeedReload()
 		XCTAssertEqual(sut.errorMessage, nil)
 	}
@@ -314,7 +309,7 @@ final class FeedUIIntegrationTests: XCTestCase {
     
 	// MARK: - Helpers
 	
-	private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: FeedViewController, loader: LoaderSpy) {
+	private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: ListViewController, loader: LoaderSpy) {
 		let loader = LoaderSpy()
         let sut = FeedUIComposer.feedComposedWith(feedLoader: loader.loadPublisher, imageLoader: loader.loadImageDataPublisher )
 		trackForMemoryLeaks(loader, file: file, line: line)

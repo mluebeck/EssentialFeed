@@ -2,24 +2,24 @@
 //  SharedLocalizationTestHelpers.swift
 //  EssentialFeedTests
 //
-//  Created by Mario Rotz on 01.09.23.
+//  Created by Mario Rotz on 02.09.23.
 //  Copyright © 2023 Essential Developer. All rights reserved.
 //
 
+import Foundation
 import XCTest
-
 
 func assertLocalizedKeyAndValuesExist(in presentationBundle: Bundle, _ table: String, file: StaticString = #filePath, line: UInt = #line) {
     let localizationBundles = allLocalizationBundles(in: presentationBundle, file: file, line: line)
     let localizedStringKeys = allLocalizedStringKeys(in: localizationBundles, table: table, file: file, line: line)
-
+    
     localizationBundles.forEach { (bundle, localization) in
         localizedStringKeys.forEach { key in
             let localizedString = bundle.localizedString(forKey: key, value: nil, table: table)
-
+            
             if localizedString == key {
                 let language = Locale.current.localizedString(forLanguageCode: localization) ?? ""
-
+                
                 XCTFail("Missing \(language) (\(localization)) localized string for key: '\(key)' in table: '\(table)'", file: file, line: line)
             }
         }
@@ -37,7 +37,7 @@ private func allLocalizationBundles(in bundle: Bundle, file: StaticString = #fil
             XCTFail("Couldn't find bundle for localization: \(localization)", file: file, line: line)
             return nil
         }
-
+        
         return (localizedBundle, localization)
     }
 }
@@ -52,7 +52,7 @@ private func allLocalizedStringKeys(in bundles: [LocalizedBundle], table: String
             XCTFail("Couldn't load localized strings for localization: \(current.localization)", file: file, line: line)
             return acc
         }
-
+        
         return acc.union(Set(keys))
     }
 }

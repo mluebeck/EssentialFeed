@@ -28,10 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         LocalFeedLoader(store: store, currentDate: Date.init)
     }()
     
-    private lazy var remoteFeedLoader : RemoteFeedLoader = {
-         RemoteFeedLoader(url: remoteURL, client: httpClient)
-    }()
-
+    
 
     convenience init(httpClient: HTTPClient, store: FeedStore & FeedImageDataStore) {
         self.init()
@@ -59,16 +56,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     
-    private func makeRemoteFeedLoaderWithLocalFallback() -> RemoteFeedLoader.Publisher {
-        return remoteFeedLoader.loadPublisher().caching(to: localFeedLoader).fallback(to: localFeedLoader.loadPublisher)
+    private func makeRemoteFeedLoaderWithLocalFallback() -> AnyPublisher<[FeedImage], Error> {
+        let remoteURL = URL(string: "https://static1.squarespace.com/static/5891c5b8d1758ec68ef5dbc2/t/5db4155a4fbade21d17ecd28/1572083034355/essential_app_feed.json")!
+                
+        return httpClient
+            .getPublisher(url: remoteURL)
+            .tryMap(FeedItemsMapper.map)
+            .caching(to: localFeedLoader)
+            .fallback(to: localFeedLoader.loadPublisher)
     }
     
+    
     private func makeLocalImageLoaderWithRemoteFallback(url:URL)->FeedImageDataLoader.Publisher {
-        let remoteImageLoader = RemoteFeedImageDataLoader(client: httpClient)
+ 
         let localImageLoader = LocalFeedImageDataLoader(store: store)
-        return localImageLoader.loadImageDataPublisher(from: url).fallback(to: {
-            remoteImageLoader.loadImageDataPublisher(from: url).caching(to: localImageLoader, using: url)
-        })
+        return localImageLoader
+            .loadImageDataPublisher(from: url)
+            .fallback(to: { [httpClient] in
+                httpClient
+                    .getPublisher(url: url)
+                    .tryMap(FeedImageDataMapper.map)
+                    .caching(to: localImageLoader, using: url)
+            })
+        
     }
 }
 
