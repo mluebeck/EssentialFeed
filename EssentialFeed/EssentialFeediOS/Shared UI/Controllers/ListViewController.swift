@@ -32,7 +32,7 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
             self?.tableView.endUpdates()
         }
     }
-    
+      
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
