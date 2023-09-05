@@ -120,6 +120,7 @@
 		8CC9E7112AA6A58300B2955C /* snapshots in Resources */ = {isa = PBXBuildFile; fileRef = 8CC9E7102AA6A58300B2955C /* snapshots */; };
 		8CC9E7132AA731ED00B2955C /* UIViewController+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9E7122AA731ED00B2955C /* UIViewController+Snapshot.swift */; };
 		8CC9E7152AA793F400B2955C /* CellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9E7142AA793F300B2955C /* CellController.swift */; };
+		8CC9E7172AA79DC300B2955C /* UIView+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9E7162AA79DC300B2955C /* UIView+Container.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -275,6 +276,7 @@
 		8CC9E7102AA6A58300B2955C /* snapshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = snapshots; sourceTree = "<group>"; };
 		8CC9E7122AA731ED00B2955C /* UIViewController+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Snapshot.swift"; sourceTree = "<group>"; };
 		8CC9E7142AA793F300B2955C /* CellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellController.swift; sourceTree = "<group>"; };
+		8CC9E7162AA79DC300B2955C /* UIView+Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Container.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -809,6 +811,7 @@
 				8CC5FDE12A8973B5004D9F9D /* UITableView+HeaderSizing.swift */,
 				0822D0F423058078004B3345 /* UITableView+Dequeueing.swift */,
 				08A3F2BA232BA64700127C15 /* UIRefreshControl+Helpers.swift */,
+				8CC9E7162AA79DC300B2955C /* UIView+Container.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1199,6 +1202,7 @@
 				8CC5FDE22A8973B6004D9F9D /* UITableView+HeaderSizing.swift in Sources */,
 				08A3F2B2232AA1C200127C15 /* ErrorView.swift in Sources */,
 				08A3F2BB232BA64700127C15 /* UIRefreshControl+Helpers.swift in Sources */,
+				8CC9E7172AA79DC300B2955C /* UIView+Container.swift in Sources */,
 				8CC9E7152AA793F400B2955C /* CellController.swift in Sources */,
 				08B5EB5022CE328100FE8683 /* UIView+Shimmering.swift in Sources */,
 				0822D0F523058078004B3345 /* UITableView+Dequeueing.swift in Sources */,
