@@ -132,6 +132,7 @@
 		8CCE1B0E2AA7DA19003B8D68 /* FEED_WITH_LOAD_MORE_ERROR_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CCE1B0B2AA7DA19003B8D68 /* FEED_WITH_LOAD_MORE_ERROR_light.png */; };
 		8CCE1B0F2AA7DA19003B8D68 /* FEED_WITH_LOAD_MORE_ERROR_extraExtraExtraLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CCE1B0C2AA7DA19003B8D68 /* FEED_WITH_LOAD_MORE_ERROR_extraExtraExtraLarge.png */; };
 		8CCE1B102AA7DA19003B8D68 /* FEED_WITH_LOAD_MORE_ERROR_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CCE1B0D2AA7DA19003B8D68 /* FEED_WITH_LOAD_MORE_ERROR_dark.png */; };
+		8CCE1B122AA7DB43003B8D68 /* Paginated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE1B112AA7DB43003B8D68 /* Paginated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -299,6 +300,7 @@
 		8CCE1B0B2AA7DA19003B8D68 /* FEED_WITH_LOAD_MORE_ERROR_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FEED_WITH_LOAD_MORE_ERROR_light.png; sourceTree = "<group>"; };
 		8CCE1B0C2AA7DA19003B8D68 /* FEED_WITH_LOAD_MORE_ERROR_extraExtraExtraLarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FEED_WITH_LOAD_MORE_ERROR_extraExtraExtraLarge.png; sourceTree = "<group>"; };
 		8CCE1B0D2AA7DA19003B8D68 /* FEED_WITH_LOAD_MORE_ERROR_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FEED_WITH_LOAD_MORE_ERROR_dark.png; sourceTree = "<group>"; };
+		8CCE1B112AA7DB43003B8D68 /* Paginated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paginated.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -668,6 +670,7 @@
 			isa = PBXGroup;
 			children = (
 				08C0880B21E4EED600ACFB30 /* HTTPClient.swift */,
+				8CCE1B112AA7DB43003B8D68 /* Paginated.swift */,
 			);
 			path = "Shared API";
 			sourceTree = "<group>";
@@ -1139,6 +1142,7 @@
 				8CC9E71F2AA7C02B00B2955C /* ImageCommentsEndpoint.swift in Sources */,
 				8CC9E6D32AA39C5400B2955C /* ResourceErrorViewModel.swift in Sources */,
 				8CC9E6B92AA2AF4000B2955C /* FeedImageDataMapper.swift in Sources */,
+				8CCE1B122AA7DB43003B8D68 /* Paginated.swift in Sources */,
 				8C01071F2A8520990008941A /* FeeImageDataCache.swift in Sources */,
 				8CC9E71D2AA7C00A00B2955C /* FeedEndpoint.swift in Sources */,
 				08E5941522523FCC00E2D213 /* FeedCachePolicy.swift in Sources */,
