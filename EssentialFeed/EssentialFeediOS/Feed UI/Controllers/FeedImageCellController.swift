@@ -6,24 +6,24 @@ import UIKit
 import EssentialFeed
 
 public protocol FeedImageCellControllerDelegate {
-	func didRequestImage()
-	func didCancelImageRequest()
+    func didRequestImage()
+    func didCancelImageRequest()
 }
 
 public final class FeedImageCellController: NSObject {
     public typealias ResourceViewModel = UIImage
+    
     private let viewModel: FeedImageViewModel
-    let delegate: FeedImageCellControllerDelegate
-	private var cell: FeedImageCell?
-	
+    private let delegate: FeedImageCellControllerDelegate
+    private var cell: FeedImageCell?
+    
     public init(viewModel: FeedImageViewModel, delegate: FeedImageCellControllerDelegate) {
         self.viewModel = viewModel
         self.delegate = delegate
     }
-	
 }
 
-extension FeedImageCellController: CellController {
+extension FeedImageCellController: UITableViewDataSource, UITableViewDelegate, UITableViewDataSourcePrefetching {
         
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
@@ -41,7 +41,7 @@ extension FeedImageCellController: CellController {
         delegate.didRequestImage()
         return cell!
     }
-
+    
     public func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cancelLoad()
     }
@@ -58,11 +58,13 @@ extension FeedImageCellController: CellController {
         releaseCellForReuse()
         delegate.didCancelImageRequest()
     }
-     
+    
+    private func releaseCellForReuse() {
+        cell = nil
+    }
 }
  
 extension FeedImageCellController: ResourceView, ResourceLoadingView, ResourceErrorView {
-
     public func display(_ viewModel: UIImage) {
         cell?.feedImageView.setImageAnimated(viewModel)
     }
@@ -74,9 +76,5 @@ extension FeedImageCellController: ResourceView, ResourceLoadingView, ResourceEr
     public func display(_ viewModel: ResourceErrorViewModel) {
         cell?.feedImageRetryButton.isHidden = viewModel.message == nil
     }
-
-    
-	private func releaseCellForReuse() {
-		cell = nil
-	}
 }
+

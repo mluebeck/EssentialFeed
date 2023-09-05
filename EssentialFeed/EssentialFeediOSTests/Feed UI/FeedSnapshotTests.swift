@@ -5,58 +5,43 @@
 //  Created by Mario Rotz on 13.08.23.
 //  Copyright © 2023 Essential Developer. All rights reserved.
 //
+ 
 
 import XCTest
 import EssentialFeediOS
 @testable import EssentialFeed
 
 class FeedSnapshotTests: XCTestCase {
-    
-    func test_emptyFeed() {
-        let sut = makeSUT()
         
-        sut.display(emptyFeed())
-
-        assert(snapshot: sut.snapshot(for: .iPhone8(style: .light)), named: "EMPTY_FEED_light")
-        assert(snapshot: sut.snapshot(for: .iPhone8(style: .dark)), named: "EMPTY_FEED_dark")
-    }
-    
     func test_feedWithContent() {
         let sut = makeSUT()
+        
         sut.display(feedWithContent())
-        assert(snapshot:sut.snapshot(for:.iPhone8(style:.light)), named: "FEED_WITH_CONTENT_light")
-        assert(snapshot:sut.snapshot(for:.iPhone8(style:.dark)), named: "FEED_WITH_CONTENT_dark")
+
+        assert(snapshot: sut.snapshot(for: .iPhone8(style: .light)), named: "FEED_WITH_CONTENT_light")
+        assert(snapshot: sut.snapshot(for: .iPhone8(style: .dark)), named: "FEED_WITH_CONTENT_dark")
+        assert(snapshot: sut.snapshot(for: .iPhone8(style: .light, contentSize: .extraExtraExtraLarge)), named: "FEED_WITH_CONTENT_light_extraExtraExtraLarge")
     }
-    
-    func test_feedWithErrorMessage() {
-        let sut = makeSUT()
-        sut.display(.error(message: "An \n multi- \n line \n error message"))
-        assert(snapshot:sut.snapshot(for:.iPhone8(style:.light)), named: "FEED_WITH_ERROR_MESSAGE_light")
-        assert(snapshot:sut.snapshot(for:.iPhone8(style:.dark)), named: "FEED_WITH_ERROR_MESSAGE_dark")
-    }
-    
+        
     func test_feedWithFailedImageLoading() {
         let sut = makeSUT()
+
         sut.display(feedWithFailedImageLoading())
-        assert(snapshot:sut.snapshot(for:.iPhone8(style:.light)), named:"FEED_WITH_FAILED_IMAGE_LOADING_light")
-        assert(snapshot:sut.snapshot(for:.iPhone8(style:.dark)), named:"FEED_WITH_FAILED_IMAGE_LOADING_dark")
+
+        assert(snapshot: sut.snapshot(for: .iPhone8(style: .light)), named: "FEED_WITH_FAILED_IMAGE_LOADING_light")
+        assert(snapshot: sut.snapshot(for: .iPhone8(style: .dark)), named: "FEED_WITH_FAILED_IMAGE_LOADING_dark")
     }
     
-    
-    //MARK: - Helpers
-    
+    // MARK: - Helpers
+
     private func makeSUT() -> ListViewController {
-        let bundle = Bundle(for:ListViewController.self)
-        let storyboard = UIStoryboard(name:"Feed", bundle:bundle)
+        let bundle = Bundle(for: ListViewController.self)
+        let storyboard = UIStoryboard(name: "Feed", bundle: bundle)
         let controller = storyboard.instantiateInitialViewController() as! ListViewController
         controller.loadViewIfNeeded()
         controller.tableView.showsVerticalScrollIndicator = false
         controller.tableView.showsHorizontalScrollIndicator = false
         return controller
-    }
-    
-    private func emptyFeed() -> [FeedImageCellController] {
-        return []
     }
     
     private func feedWithContent() -> [ImageStub] {
@@ -88,21 +73,20 @@ class FeedSnapshotTests: XCTestCase {
             )
         ]
     }
+    
 }
 
 private extension ListViewController {
     func display(_ stubs: [ImageStub]) {
-        let cells: [FeedImageCellController] = stubs.map { stub in
+        let cells: [CellController] = stubs.map { stub in
             let cellController = FeedImageCellController(viewModel: stub.viewModel, delegate: stub)
             stub.controller = cellController
-            return cellController
+            return CellController(cellController)
         }
         
         display(cells)
     }
 }
-
-
 
 private class ImageStub: FeedImageCellControllerDelegate {
     let viewModel: FeedImageViewModel

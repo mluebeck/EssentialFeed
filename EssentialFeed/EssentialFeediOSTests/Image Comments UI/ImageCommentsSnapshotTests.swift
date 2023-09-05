@@ -1,9 +1,5 @@
 //
-//  ImageCommentsSnapshotTests.swift
-//  EssentialFeediOSTests
-//
-//  Created by Mario Rotz on 05.09.23.
-//  Copyright © 2023 Essential Developer. All rights reserved.
+// Copyright © 2020 Essential Developer. All rights reserved.
 //
 
 import XCTest
@@ -35,6 +31,10 @@ class ImageCommentsSnapshotTests: XCTestCase {
     }
     
     private func comments() -> [CellController] {
+        commentControllers().map { CellController($0) }
+    }
+    
+    private func commentControllers() -> [ImageCommentCellController] {
         return [
             ImageCommentCellController(
                 model: ImageCommentViewModel(
