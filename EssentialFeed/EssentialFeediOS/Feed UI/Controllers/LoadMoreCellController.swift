@@ -5,7 +5,7 @@
 //  Created by Mario Rotz on 05.09.23.
 //  Copyright © 2023 Essential Developer. All rights reserved.
 //
-
+ 
 
 import UIKit
 import EssentialFeed
@@ -25,16 +25,19 @@ public class LoadMoreCellController: NSObject, UITableViewDataSource, UITableVie
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         cell
     }
-    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    
+    public func tableView(_ tableView: UITableView, willDisplay: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard !cell.isLoading else { return }
+        
         callback()
     }
 }
 
-extension LoadMoreCellController: ResourceLoadingView {
+extension LoadMoreCellController: ResourceLoadingView, ResourceErrorView {
     public func display(_ viewModel: ResourceErrorViewModel) {
         cell.message = viewModel.message
     }
-
+    
     public func display(_ viewModel: ResourceLoadingViewModel) {
         cell.isLoading = viewModel.isLoading
     }
