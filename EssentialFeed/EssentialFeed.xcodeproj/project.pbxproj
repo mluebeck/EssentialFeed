@@ -118,6 +118,7 @@
 		8CC9E70C2AA6A4E000B2955C /* ImageComments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC9E70B2AA6A4DF00B2955C /* ImageComments.storyboard */; };
 		8CC9E70F2AA6A50A00B2955C /* ImageCommentsSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9E70E2AA6A50A00B2955C /* ImageCommentsSnapshotTests.swift */; };
 		8CC9E7112AA6A58300B2955C /* snapshots in Resources */ = {isa = PBXBuildFile; fileRef = 8CC9E7102AA6A58300B2955C /* snapshots */; };
+		8CC9E7132AA731ED00B2955C /* UIViewController+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9E7122AA731ED00B2955C /* UIViewController+Snapshot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -271,6 +272,7 @@
 		8CC9E70B2AA6A4DF00B2955C /* ImageComments.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ImageComments.storyboard; sourceTree = "<group>"; };
 		8CC9E70E2AA6A50A00B2955C /* ImageCommentsSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsSnapshotTests.swift; sourceTree = "<group>"; };
 		8CC9E7102AA6A58300B2955C /* snapshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = snapshots; sourceTree = "<group>"; };
+		8CC9E7122AA731ED00B2955C /* UIViewController+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Snapshot.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -627,6 +629,7 @@
 			children = (
 				8CC5FDDF2A8970F3004D9F9D /* UIImage+TestHelpers.swift */,
 				8CC9E7042AA6A31500B2955C /* XCTestCase+Snapshot.swift */,
+				8CC9E7122AA731ED00B2955C /* UIViewController+Snapshot.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1210,6 +1213,7 @@
 			files = (
 				08BB7EA922C138AC00F8B83C /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				8CC9E7032AA5647D00B2955C /* ListSnapshotTests.swift in Sources */,
+				8CC9E7132AA731ED00B2955C /* UIViewController+Snapshot.swift in Sources */,
 				8CC9E7052AA6A31500B2955C /* XCTestCase+Snapshot.swift in Sources */,
 				8CC5FDDD2A896C18004D9F9D /* FeedSnapshotTests.swift in Sources */,
 				8CC9E70F2AA6A50A00B2955C /* ImageCommentsSnapshotTests.swift in Sources */,
