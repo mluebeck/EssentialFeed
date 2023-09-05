@@ -54,6 +54,15 @@ class FeedAcceptanceTests : XCTestCase {
         XCTAssertNil(store.feedCache, "Expected to delete expired cache")
     }
     
+    
+    func test_onFeedImageSelection_displaysComments() {
+        let comments = showCommentsForFirstImage()
+        
+        XCTAssertEqual(comments.numberOfRenderedComments(), 1)
+        XCTAssertEqual(comments.commentMessage(at: 0), makeCommentMessage())
+    }
+
+    
     func test_onEnteringBackground_keepsNonExpiredFeedCache() {
         let store = InMemoryFeedStore.withNonExpiredFeedCache
         
@@ -71,7 +80,16 @@ class FeedAcceptanceTests : XCTestCase {
         sut.sceneWillResignActive(UIApplication.shared.connectedScenes.first!)
     }
 
-     
+    private func showCommentsForFirstImage() -> ListViewController {
+        let feed = launch(httpClient: .online(response), store: .empty)
+        
+        feed.simulateTapOnFeedImage(at: 0)
+        RunLoop.current.run(until: Date())
+        
+        let nav = feed.navigationController
+        return nav?.topViewController as! ListViewController
+    }
+
     
      
     
@@ -100,6 +118,8 @@ class FeedAcceptanceTests : XCTestCase {
             return makeImageData()
         case "/essential-feed/v1/feed":
             return makeFeedData()
+        case "/essential-feed/v1/image/2AB2AE66-A4B7-4A16-B374-51BBAC8DB086/comments":
+            return makeCommentsData()
         default:
             return Data()
         }
@@ -115,4 +135,22 @@ class FeedAcceptanceTests : XCTestCase {
             ["id": "A28F5FE3-27A7-44E9-8DF5-53742D0E4A5A", "image": "http://feed.com/image-2"]
         ]])
     }
+    
+    private func makeCommentsData() -> Data {
+        return try! JSONSerialization.data(withJSONObject: ["items": [
+            [
+                "id": UUID().uuidString,
+                "message": makeCommentMessage(),
+                "created_at": "2020-05-20T11:24:59+0000",
+                "author": [
+                    "username": "a username"
+                ]
+            ] as [String : Any],
+        ]])
+    }
+    
+    private func makeCommentMessage() -> String {
+        "a message"
+    }
+
 }
