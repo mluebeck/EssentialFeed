@@ -35,7 +35,9 @@ extension FeedImageCellController: CellController {
         cell?.locationLabel.text = viewModel.location
         cell?.descriptionLabel.text = viewModel.description
         cell?.feedImageView.image = nil
-        cell?.onRetry = delegate.didRequestImage
+        cell?.onRetry = { [weak self] in
+            self?.delegate.didRequestImage()
+        }
         delegate.didRequestImage()
         return cell!
     }
