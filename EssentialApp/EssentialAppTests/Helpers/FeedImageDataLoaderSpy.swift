@@ -9,32 +9,39 @@
 import Foundation
 import EssentialFeed
 
-class FeedImageDataLoaderSpy: FeedImageDataLoader {
-    private var messages = [(url: URL, completion: (FeedImageDataLoader.Result) -> Void)]()
-
-    private(set) var cancelledURLs = [URL]()
-
-    var loadedURLs: [URL] {
-        return messages.map { $0.url }
-    }
-
-    private struct Task: FeedImageDataLoaderTask {
-        let callback: () -> Void
-        func cancel() { callback() }
-    }
-
-    func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
-        messages.append((url, completion))
-        return Task { [weak self] in
-            self?.cancelledURLs.append(url)
-        }
+class FeedImageDataStoreSpy: FeedImageDataStore {
+    enum Message: Equatable {
+        case insert(data: Data, for: URL)
+        case retrieve(dataFor: URL)
     }
     
-    func complete(with error: Error, at index: Int = 0) {
-        messages[index].completion(.failure(error))
+    private(set) var receivedMessages = [Message]()
+    private var retrievalResult: Result<Data?, Error>?
+    private var insertionResult: Result<Void, Error>?
+    
+    func insert(_ data: Data, for url: URL) throws {
+        receivedMessages.append(.insert(data: data, for: url))
+        try insertionResult?.get()
     }
     
-    func complete(with data: Data, at index: Int = 0) {
-        messages[index].completion(.success(data))
+    func retrieve(dataForURL url: URL) throws -> Data? {
+        receivedMessages.append(.retrieve(dataFor: url))
+        return try retrievalResult?.get()
+    }
+    
+    func completeRetrieval(with error: Error) {
+        retrievalResult = .failure(error)
+    }
+    
+    func completeRetrieval(with data: Data?) {
+        retrievalResult = .success(data)
+    }
+    
+    func completeInsertion(with error: Error) {
+        insertionResult = .failure(error)
+    }
+    
+    func completeInsertionSuccessfully() {
+        insertionResult = .success(())
     }
 }
