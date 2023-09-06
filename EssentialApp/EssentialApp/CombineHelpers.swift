@@ -1,9 +1,5 @@
 //
-//  CombineHelpers.swift
-//  EssentialApp
-//
-//  Created by Mario Rotz on 15.08.23.
-//  Copyright © 2023 Essential Developer. All rights reserved.
+//  Copyright © 2020 Essential Developer. All rights reserved.
 //
 
 import Foundation
@@ -84,11 +80,12 @@ private extension FeedImageDataCache {
 public extension LocalFeedLoader {
     typealias Publisher = AnyPublisher<[FeedImage], Error>
     
-    func loadPublisher() -> Publisher {
-        Deferred {
-            Future(self.load)
-        }
-        .eraseToAnyPublisher()
+    func loadPublisher() -> AnyPublisher<[FeedImage], Error> {
+         Deferred {
+            Future { completion in
+                completion(Result{ try self.load() })
+            }
+        }.eraseToAnyPublisher()
     }
 }
 
@@ -158,7 +155,7 @@ extension DispatchQueue {
             guard isMainQueue() else {
                 return DispatchQueue.main.schedule(options: options, action)
             }
-                        
+            
             action()
         }
         
@@ -171,7 +168,6 @@ extension DispatchQueue {
         }
     }
 }
-
 
 typealias AnyDispatchQueueScheduler = AnyScheduler<DispatchQueue.SchedulerTimeType, DispatchQueue.SchedulerOptions>
 
@@ -218,3 +214,4 @@ struct AnyScheduler<SchedulerTimeType: Strideable, SchedulerOptions>: Scheduler 
         _scheduleAfterInterval(date, interval, tolerance, options, action)
     }
 }
+
